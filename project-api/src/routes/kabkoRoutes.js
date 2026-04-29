@@ -10,8 +10,9 @@ const KabkoController = require('../controllers/kabkoController');
 // DELETE /kabkot/:id                      - Hapus kabkot
 
 // PENTING: route statis harus di atas route dinamis /:id
+// GET kabkot berdasarkan provinsi
+router.get('/provinsi/:id_provinsi', KabkoController.getByProvinsiId);
 router.get('/by-provinsi', KabkoController.getByProvinsi);
-
 router.get('/',       KabkoController.index);
 router.post('/',      KabkoController.store);
 router.get('/:id',    KabkoController.show);
