@@ -77,7 +77,16 @@ getByProvinsiId: async (req, res) => {
     }
   },
 
-  
+  // DELETE /kabkot/:id
+  destroy: async (req, res) => {
+    try {
+      const data = await KabkoModel.delete(req.params.id);
+      if (!data) return res.status(404).json({ success: false, message: 'Kabupaten/Kota tidak ditemukan' });
+      res.json({ success: true, message: 'Kabupaten/Kota berhasil dihapus' });
+    } catch (err) {
+      res.status(500).json({ success: false, message: err.message });
+    }
+  },
 };
 
 module.exports = KabkoController;
