@@ -33,20 +33,6 @@ getByProvinsiId: async (req, res) => {
     }
   },
 
-  // GET /kabkot/by-provinsi?provinsi_id=1
-  // Digunakan untuk AJAX dropdown (sama dengan route get-kabkot di Laravel)
-  getByProvinsi: async (req, res) => {
-    try {
-      const { provinsi_id } = req.query;
-      if (!provinsi_id) {
-        return res.status(422).json({ success: false, message: 'provinsi_id wajib diisi' });
-      }
-      const data = await KabkoModel.getByProvinsiId(provinsi_id);
-      res.json({ success: true, data });
-    } catch (err) {
-      res.status(500).json({ success: false, message: err.message });
-    }
-  },
 
   // POST /kabkot
   store: async (req, res) => {
