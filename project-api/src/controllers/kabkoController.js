@@ -1,16 +1,7 @@
 const KabkoModel = require('../models/kabkoModel');
 
 const KabkoController = {
-// GET /kabkot/provinsi/:id_provinsi
-getByProvinsiId: async (req, res) => {
-  try {
-    const { id_provinsi } = req.params;
-    const data = await KabkoModel.getByProvinsiId(id_provinsi);
-    res.json({ success: true, data });
-  } catch (err) {
-    res.status(500).json({ success: false, message: err.message });
-  }
-},
+
 
   // GET /kabkot
   index: async (req, res) => {

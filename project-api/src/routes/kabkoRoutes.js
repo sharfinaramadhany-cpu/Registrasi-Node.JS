@@ -11,7 +11,6 @@ const KabkoController = require('../controllers/kabkoController');
 
 // PENTING: route statis harus di atas route dinamis /:id
 // GET kabkot berdasarkan provinsi
-router.get('/provinsi/:id_provinsi', KabkoController.getByProvinsiId);
 router.get('/by-provinsi', KabkoController.getByProvinsi);
 router.get('/',       KabkoController.index);
 router.post('/',      KabkoController.store);
